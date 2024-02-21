@@ -1,3 +1,7 @@
+## 1. 将jdk-17.0.9复制到当前目录
+
+## 2. 编译
+```
 # -shared ：指定生成动态链接库。
 # -static ：指定生成静态链接库。
 # -fPIC ：表示编译为位置独立的代码，用于编译共享库。目标文件需要创建成位置无关码，念上就是在可执行程序装载它们的时候，它们可以放在可执行程序的内存里的任何地方。
@@ -10,3 +14,7 @@
 # -Wl,options ：把参数(options)传递给链接器ld。如果options中间有逗号,就将options分成多个选项，然后传递给链接程序。
 
 g++ -Wall -g -I"jdk-17.0.9/include" -I"jdk-17.0.9/include/win32" -I"jdk-17.0.9/include/win32/bridge" -L"jdk-17.0.9/bin/server" -L"jdk-17.0.9/bin" -L"jdk-17.0.9/lib" -ljvm -fPIC StartJVM.cpp -o StartJVM.exe
+```
+
+## 3. 执行
+双击执行StartJVM.exe
