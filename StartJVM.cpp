@@ -82,7 +82,12 @@ int main() {
     printf("FindClass JavaMain\n");
     jmethodID mid = env->GetStaticMethodID(cls, "main", "([Ljava/lang/String;)V");
     printf("GetStaticMethodID main\n");
-    env->CallStaticVoidMethod(cls, mid, 100);
+
+    // 创建String[]数组， 用作main方法的参数
+    jclass string_class = env->FindClass("java/lang/String");
+    jobjectArray string_array = env->NewObjectArray(0, string_class, NULL);
+    // 调用java main方法
+    env->CallStaticVoidMethod(cls, mid, string_array);
     printf("CallStaticVoidMethod main(String[])\n");
 
     // 关闭JVM

@@ -18,3 +18,6 @@ g++ -Wall -g -I"jdk-17.0.9/include" -I"jdk-17.0.9/include/win32" -I"jdk-17.0.9/i
 
 ## 3. 执行
 双击执行StartJVM.exe
+
+### 
+博客： [C++启动JVM](https://segmentfault.com/a/1190000044643571)
